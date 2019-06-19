@@ -1,3 +1,5 @@
+import { resetLoginForm } from "./loginForm.js";
+import { getMyBooks } from "./myBooks.js";
 //synchronous action creators
 export const setCurrentUser = user => {
   return {
@@ -24,11 +26,13 @@ export const login = credentials => {
       body: JSON.stringify(credentials)
     })
       .then(r => r.json())
-      .then(user => {
-        if (user.error) {
-          alert(user.error);
+      .then(response => {
+        if (response.error) {
+          alert(response.error);
         } else {
-          dispatch(setCurrentUser(user));
+          dispatch(setCurrentUser(response.data));
+          dispatch(getMyBooks());
+          dispatch(resetLoginForm());
         }
       })
       .catch(console.log);
@@ -55,11 +59,12 @@ export const getCurrentUser = () => {
       }
     })
       .then(r => r.json())
-      .then(user => {
-        if (user.error) {
-          alert(user.error);
+      .then(response => {
+        if (response.error) {
+          alert(response.error);
         } else {
-          dispatch(setCurrentUser(user));
+          dispatch(setCurrentUser(response.data));
+          dispatch(getMyBooks());
         }
       })
       .catch(console.log);
