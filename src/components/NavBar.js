@@ -7,7 +7,7 @@ const NavBar = ({ currentUser }) => {
   return (
     <div className="NavBar">
       {currentUser ? (
-        <strong> Welcome, {currentUser.data.attributes.username}</strong>
+        <strong> Welcome, {currentUser.attributes.username} !</strong>
       ) : (
         ""
       )}
