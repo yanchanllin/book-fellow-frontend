@@ -21,7 +21,7 @@ export const getMyBooks = () => {
         if (response.error) {
           alert(response.error);
         } else {
-          dispatch(setMyBooks());
+          dispatch(setMyBooks(response.data));
         }
       })
       .catch(console.log);
