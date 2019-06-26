@@ -1,5 +1,5 @@
 import React from "react";
-import { getMyReviews } from "../actions/myReviews";
+import { getMyReviews } from "../actions/myReviews.js";
 
 const ReviewCard = ({ review }) => {
   return (
