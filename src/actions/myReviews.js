@@ -1,5 +1,6 @@
 //synchronous actions
 export const setMyReviews = reviews => {
+  console.log("hi");
   return {
     type: "SET_MY_REVIEWS",
     reviews
@@ -9,7 +10,7 @@ export const setMyReviews = reviews => {
 //async actions
 export const getMyReviews = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/reviews", {
+    return fetch("http://localhost:3000/api/v1/books/book_id/reviews", {
       credentials: "include",
       method: "GET",
       headers: {
