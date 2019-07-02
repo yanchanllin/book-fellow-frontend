@@ -1,0 +1,53 @@
+import React from "react";
+
+import { connect } from "react-redux";
+import { reviewForm } from "../actions/reviewForm.js";
+import { createReview } from "../actions/reviewForm.js";
+
+const ReviewForm = ({ formData, history, reviewForm, bookId }) => {
+  const { content, rating } = formData;
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    reviewForm(name, value);
+  };
+};
+
+const handleSubmit = event => {
+  event.preventDefault();
+  createReview({
+    ...formData,
+    bookId
+  });
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        placeholder="content"
+        name="content"
+        onChange={handleChange}
+        value={content}
+      />
+      <br />
+      <input
+        placeholder="rating"
+        name="rating"
+        onChange={handleChange}
+        value={rating}
+      />
+      <br />
+      <input type="submit" value="Create Review" />
+    </form>
+  );
+};
+
+const mapStateToProps = state => {
+  const bookId = state.book ? state.book.id : "";
+  return {
+    formData: state.reviewForm,
+    bookId
+  };
+};
+export default connect(
+  mapStateToProps,
+  { reviewForm, createReview }
+)(ReviewForm);
