@@ -25,4 +25,4 @@ const BookCard = ({ book, deleteBook }) => {
 
 export default BookCard;
 
-// css for books
+//This page is for css of books
