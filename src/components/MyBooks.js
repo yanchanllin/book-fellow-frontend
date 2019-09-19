@@ -7,9 +7,6 @@ import Card from "react-bootstrap/Card";
 class MyBooks extends React.Component {
   constructor() {
     super();
-    this.state = {
-      timesClicked: 0
-    };
   }
 
   render() {
