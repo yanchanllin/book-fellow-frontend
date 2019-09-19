@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReviewCard from "./ReviewCard.js";
-// import ReviewForm from "./ReviewForm.js";
 
 const BookCard = ({ book, deleteBook }) => {
   return book ? (

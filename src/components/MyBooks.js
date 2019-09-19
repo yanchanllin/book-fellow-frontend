@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteBook } from "../actions/myBooks.js";
 import Card from "react-bootstrap/Card";
 
 class MyBooks extends React.Component {
@@ -10,13 +9,11 @@ class MyBooks extends React.Component {
   }
 
   render() {
-    const books = this.props.books
-    const bookCards = books.map((b) => (
+    const bookCards = this.props.books.map((b) => (
       <>
         <Card
           key={b.id}
           b={b}
-          deleteBook={this.props.deleteBook}
           style={{
             width: "16rem"
           }}
@@ -34,6 +31,7 @@ class MyBooks extends React.Component {
     return (
       <div>
         <h1 align="center">All Books</h1>
+
         <div
           style={{
             display: "flex",
@@ -54,8 +52,7 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-  mapStateToProps,
-  { deleteBook }
+  mapStateToProps
 )(MyBooks);
 
 
