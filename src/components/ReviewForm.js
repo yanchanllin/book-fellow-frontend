@@ -1,15 +1,21 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { reviewForm } from "../actions/reviewForm.js";
+import { updateNewReviewForm } from "../actions/reviewForm.js";
 import { createReview } from "../actions/reviewForm.js";
 
-const ReviewForm = ({ formData, history, reviewForm, bookId }) => {
+const ReviewForm = ({
+  formData,
+  history,
+  updateNewReviewForm,
+  createReview,
+  bookId
+}) => {
   const { content, rating } = formData;
 
   const handleChange = event => {
     const { name, value } = event.target;
-    reviewForm(name, value);
+    updateNewReviewForm(name, value);
   };
 };
 
@@ -49,5 +55,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  { reviewForm, createReview }
+  { updateNewReviewForm, createReview }
 )(ReviewForm);

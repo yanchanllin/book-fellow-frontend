@@ -1,14 +1,47 @@
 // sync actions
 
-export const bookForm = (name, value) => {
+export const updateBookForm = (name, value) => {
   const formData = { name, value };
   return {
-    type: "UPDATE_NEW_BOOK_FORM",
+    type: "UPDATE_BOOK_FORM",
     formData
   };
 };
+
+export const updateBookSuccess = book => {
+  return {
+    type: "UPDATE_BOOK",
+    book
+  };
+};
+
+export const resetNewBookForm = () => {
+  return {
+    type: "RESET_NEW_BOOK_FORM"
+  };
+};
+
+export const setFormDataForEdit = book => {
+  const bookFormData = {
+    name: book.attributes.name,
+    author: book.attributes.author,
+    description: book.attributes.description
+  };
+  return {
+    type: "SET_FORM_DATA_FOR_EDIT",
+    bookFormData
+  };
+};
+
+export const addBook = book => {
+  return {
+    type: "ADD_BOOK",
+    book
+  };
+};
 //async actions
-export const createBook = bookData => {
+export const createBook = (bookData, history) => {
+  console.log('C');
   return dispatch => {
     const sendableBookData = {
       name: bookData.name,
@@ -25,7 +58,45 @@ export const createBook = bookData => {
       body: JSON.stringify(sendableBookData)
     })
       .then(r => r.json())
-      .then(console.log)
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error);
+        } else {
+          console.log('D');
+          dispatch(addBook(resp.data));
+          dispatch(resetNewBookForm());
+          history.push(`/books/${resp.data.id}`);
+        }
+      })
+      .catch(console.log);
+  };
+  console.log('E');
+};
+export const updateBook = (bookData, history) => {
+  return dispatch => {
+    const sendableBookData = {
+      description: bookData.description,
+      author: bookData.author,
+      name: bookData.name,
+      user_id: bookData.userId
+    };
+    return fetch(`http://localhost:3000/api/v1/books/${bookData.bookId}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(sendableBookData)
+    })
+      .then(r => r.json())
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error);
+        } else {
+          dispatch(updateBookSuccess(resp.data));
+          history.push(`/books/${resp.data.id}`);
+        }
+      })
       .catch(console.log);
   };
 };
