@@ -11,14 +11,10 @@ class MyBooks extends React.Component {
       timesClicked: 0
     };
   }
-  // handleClick = () => {
-  //   this.setState({
-  //     timesClicked: this.state.timesClicked + 1
-  //   });
-  // };
 
   render() {
-    const bookCards = this.props.books.map(b => (
+    const books = this.props.books
+    const bookCards = books.map((b) => (
       <>
         <Card
           key={b.id}
@@ -32,9 +28,6 @@ class MyBooks extends React.Component {
             <Card.Title>{b.attributes.name}</Card.Title>
             <Card.Text>by: {b.attributes.author}</Card.Text>
             <Link to={`/books/${b.id}`}>Read more</Link>
-            {/* <button onClick={this.handleClick}>
-              {this.state.timesClicked}
-            </button> */}
           </Card.Body>
         </Card>
         <br />
@@ -69,15 +62,4 @@ export default connect(
   { deleteBook }
 )(MyBooks);
 
-// The functionality we’re looking for is simple search functionality.
-// Add a search form at the top of the page, at least an input
-// When the user types in the input, it should show any books whose author’s name contains
-//  what the user has typed in
-// If there is nothing in the search input, all books should display
-// If no authors match the search input, no books should display
-// Should update as the user types
-// Once again, only one piece of state should be added - to represent the current value of the
-// search input
 
-// lifecyle -compoentwillmount removed why (details)
-// constructor-auto run in the backgroud -
