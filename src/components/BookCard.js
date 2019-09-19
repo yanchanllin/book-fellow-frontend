@@ -16,18 +16,12 @@ const BookCard = ({ book, deleteBook }) => {
       <Link to={`/books/${book.id}/edit`}>Edit this book</Link>
       <br />
       <button onClick={() => deleteBook(book.id)}>DELETE</button>
-      
+
     </div>
   ) : (
-    <p>This the the BOOK card with no BOOK!</p>
-  );
+      <p>This the the BOOK card with no BOOK!</p>
+    );
 };
-
-// const bookCard = {
-//   marginTop: "20px",
-//   marginLeft: "-110px",
-//   width: "120%"
-// };
 
 export default BookCard;
 
