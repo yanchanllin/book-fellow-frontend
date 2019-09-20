@@ -9,8 +9,8 @@ const BookCard = ({ book, deleteBook }) => {
       <li>
         By: {book.attributes.author} <br />
         [Description: {book.attributes.description}]
-        {/* Review:{" "}
-        <ReviewCard reviews={book.attributes.reviews} /> */}
+        {/* Review:{" "} */}
+        <ReviewCard reviews={book.attributes.reviews} />
       </li>
       <br />
       <Link to={`/books/${book.id}/edit`}>Edit this book</Link>
