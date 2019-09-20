@@ -16,8 +16,8 @@ class MyBooks extends React.Component {
           }}
         >
           <Card.Body>
-            <Card.Title>{b.attributes.name}</Card.Title>
-            <Card.Text>by: {b.attributes.author}</Card.Text>
+            <Card.Title>"{b.attributes.name}"</Card.Title>
+            <Card.Text>By: {b.attributes.author}</Card.Text>
             <Link to={`/books/${b.id}`}>Read more</Link>
           </Card.Body>
         </Card>
@@ -27,7 +27,7 @@ class MyBooks extends React.Component {
 
     return (
       <div>
-        <h1 align="center">All Books</h1>
+        <h1 align="center">All Books:</h1>
         <div
           style={{
             display: "flex",
