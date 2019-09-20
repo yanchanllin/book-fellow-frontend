@@ -31,7 +31,6 @@ class MyBooks extends React.Component {
     return (
       <div>
         <h1 align="center">All Books</h1>
-
         <div
           style={{
             display: "flex",
