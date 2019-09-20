@@ -7,7 +7,7 @@ const BookCard = ({ book, deleteBook }) => {
     <div>
       <h3> Title: "{book.attributes.name}" </h3>
       <li>
-        by: {book.attributes.author} <br />
+        By: {book.attributes.author} <br />
         [description: {book.attributes.description}] Review:{" "}
         <ReviewCard reviews={book.attributes.reviews} />
       </li>
