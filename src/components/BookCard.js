@@ -25,4 +25,4 @@ const BookCard = ({ book, deleteBook }) => {
 export default BookCard;
 
 //This page is for css of books
-//going to add a handlesubmit and handlechange to add review here.
+//going to add a handlesubmit and handlechange to add review here
