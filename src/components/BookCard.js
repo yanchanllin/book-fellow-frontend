@@ -33,4 +33,4 @@ class BookCard extends React.Component {
 export default BookCard;
 
 //This page is for css of books
-//going to add a handlesubmit and handlechange to add review here not finish yet 
+//going to add a handlesubmit and handlechange to add review here not finish yet. 
