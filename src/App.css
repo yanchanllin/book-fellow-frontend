@@ -67,5 +67,5 @@ div.card-title.h5{
 .my-form input[type="submit"]:hover{
   color:#000;
   background-color: hsla(96, 36%, 84%, 0.863);
-  border-radius: 10%;
+  border-radius: 20%;
 }
