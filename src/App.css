@@ -10,6 +10,7 @@
   justify-content: space-evenly;
   font-size: 150%;
   padding: 0px 39px 0px 12px;
+ 
 }
 
 button {
@@ -40,7 +41,7 @@ body {
 
 a{
   text-decoration-line: none;
-  color:#000000;
+  color:#000;
 }
 
 a:hover{
@@ -51,6 +52,7 @@ a:hover{
 div.card-title.h5{
    background-color: hsla(96, 36%, 84%, 0.863);
    font-style: italic;
+   color:#f08f10;
 }
 
 .my-form {
@@ -62,10 +64,11 @@ div.card-title.h5{
   font-size: 15px;
   padding: 8px;
   border:none;
+  border-radius: 15%;
 }
 
 .my-form input[type="submit"]:hover{
   color:#000;
   background-color: hsla(96, 36%, 84%, 0.863);
-  border-radius: 20%;
+  border-radius: 15%;
 }
