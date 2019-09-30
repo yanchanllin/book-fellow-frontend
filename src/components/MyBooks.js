@@ -17,8 +17,7 @@ class MyBooks extends React.Component {
         >
           <Card.Body>
             <Card.Title>"{b.attributes.name}"</Card.Title>
-            <Card.Text>By: {b.attributes.author}</Card.Text>
-            <Link to={`/books/${b.id}`}>Read more</Link>
+            <Card.Text>By: {b.attributes.author}</Card.Text><Link to={`/books/${b.id}`}>...more</Link>
           </Card.Body>
         </Card>
         <br />
