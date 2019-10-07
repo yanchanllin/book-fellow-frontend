@@ -40,8 +40,8 @@ body {
 }
 
 a{
-  text-decoration-line: none;
-  color:#000;
+  text-decoration-line: underline;
+  color:rgb(145, 80, 7);
 }
 
 a:hover{
