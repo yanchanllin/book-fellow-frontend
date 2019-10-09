@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 30px 450px 90px 450px;
 }
 
 .NavBar {
@@ -10,7 +11,6 @@
   justify-content: space-evenly;
   font-size: 150%;
   padding: 0px 39px 0px 12px;
-
 }
 
 button {
@@ -26,7 +26,7 @@ button:hover {
 }
 
 body {
-  background: hsla(96, 19%, 59%, 0.863);
+  background-image: url("https://images.pexels.com/photos/733857/pexels-photo-733857.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=1000")
 }
 
 .card {
@@ -34,14 +34,14 @@ body {
   background-color: rgb(253, 253, 253);
   justify-content: space-evenly;
   flex-direction: row;
-  padding: 10px;
+  padding: 10px; 
   border-bottom-right-radius: 15%;
   border-top-right-radius: 15%;
 }
 
 a{
   text-decoration-line: underline;
-  color:rgb(145, 80, 7);
+  color:rgb(107, 207, 60);
 }
 
 a:hover{
@@ -52,7 +52,7 @@ a:hover{
 div.card-title.h5{
    background-color: hsla(96, 36%, 84%, 0.863);
    font-style: italic;
-   color:#f08f10;
+   color:#b96d09;
 }
 
 .my-form {
@@ -65,10 +65,11 @@ div.card-title.h5{
   padding: 8px;
   border:none;
   border-radius: 15%;
+  background-color: hsla(96, 36%, 84%, 0.863);
 }
 
 .my-form input[type="submit"]:hover{
   color:#000;
-  background-color: hsla(96, 36%, 84%, 0.863);
+  background-color: whitesmoke;
   border-radius: 15%;
 }
